@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Forms app</title>
+  <script src="/js/core.js"></script>
+  <script src="/js/main.js"></script>
+  <link rel="stylesheet" href="/css/core.css">
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+
+<body ng-app="formsApp">
+
+  <h1>Form app</h1>
+
+  <div class="event-list" ng-controller="EventList">
+    <table class="table table-bordered">
+      <tr ng-repeat="event in events">
+        <td>{{event.title}}</td>
+        <td>{{event.time}}</td>
+        <td>{{event.desc}}</td>
+      </tr>
+    </table>
+  </div>
+
+  <form class="event-form" ng-controller="EventForm">
+    <input class="form-control" type="text" ng-model="form.title"><br>
+    <input class="form-control" type="text" ng-model="form.time"><br>
+    <textarea class="form-control" cols="30" rows="2" ng-model="form.desc"></textarea><br>
+    <button class="btn btn-primary" ng-click="submit()">Submit</button>
+  </form>
+
+</body>
+</html>
